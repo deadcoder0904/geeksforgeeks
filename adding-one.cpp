@@ -39,22 +39,15 @@ ll fast_expo(ll a,ll b)
     return b&1 ? a*fast_expo(fast_expo(a,(b-1)/2),2) : fast_expo(fast_expo(a,b/2),2);
 }
 
-void adding_one(int a[],int n){
-	ull sum = 0;
-	REP(i,n)
-		sum = sum*10 + a[i];
-	sum++;
-	NREP(i,n+1){
-		a[i] = sum%10;
-		sum /= 10;
-	}
-	REP(i,n+1)
-	{
-	if(i == 0 && a[0] == 0)
-		continue;	
-	cout<<a[i]<<" ";
-	}
-	cout<<endl;	
+int* adding_one(int a[],int n){
+	NREP(i,n+1)
+		if(a[i] != 9){
+			a[i]++;
+			return a;
+		} 
+		else a[i]=0;
+	a[0]=1;
+	return a;	
 }
 
 int main()
@@ -69,7 +62,11 @@ int main()
 		a[0]=0;
 		REP(i,n)
 			cin>>a[i+1];
-		adding_one(a,n);
+		int *b = adding_one(a,n);
+		REP(i,n+1)
+			if(!(i == 0 && a[0] == 0))
+				cout<<b[i]<<" ";
+		cout<<endl;	
 	}
 	return 0;
 }
