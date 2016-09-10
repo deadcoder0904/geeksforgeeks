@@ -68,15 +68,10 @@ void spiralOrder(int matrix[4][4])
 
 int main()
 {
-	int t;
-	cin>>t;
-	while(t--)
-	{
-		int a[4][4];
-		REP(i,4)
-			REP(j,4)
-				cin>>a[i][j];
-		spiralOrder(a);
-	}
+	int a[4][4];
+	REP(i,4)
+		REP(j,4)
+			cin>>a[i][j];
+	spiralOrder(a);
 	return 0;
 }
