@@ -39,7 +39,7 @@ ll fast_expo(ll a,ll b)
     return b&1 ? a*fast_expo(fast_expo(a,(b-1)/2),2) : fast_expo(fast_expo(a,b/2),2);
 }
 
-int transition_point(int a[],int n){
+int transitionPoint(int a[],int n){
 	int low=0,high=n-1,lastindex=-1;
 	while(low<=high){
 		int mid=(low+high)/2;
@@ -49,7 +49,7 @@ int transition_point(int a[],int n){
 			}
 		else high=mid-1;	
 	}
-	return lastindex;
+	return lastindex+1;
 }
 
 int main()
@@ -63,7 +63,7 @@ int main()
 		int a[n];
 		REP(i,n)
 			cin>>a[i];
-		cout<<transition_point(a,n);
+		cout<<transition_point(a,n)<<endl;
 	}
 	return 0;
 }
