@@ -63,7 +63,7 @@ int main()
 		int a[n];
 		REP(i,n)
 			cin>>a[i];
-		cout<<transition_point(a,n)<<endl;
+		cout<<transitionPoint(a,n)<<endl;
 	}
 	return 0;
 }
