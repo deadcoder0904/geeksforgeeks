@@ -64,14 +64,20 @@ void spiralOrder(int matrix[4][4])
          left++;
          if(top > down || left > right) break;
      }
+     cout<<endl;
  }
 
 int main()
 {
-	int a[4][4];
-	REP(i,4)
-		REP(j,4)
-			cin>>a[i][j];
-	spiralOrder(a);
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int a[4][4];
+		REP(i,4)
+			REP(j,4)
+				cin>>a[i][j];
+		spiralOrder(a);
+	}
 	return 0;
 }
