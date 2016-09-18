@@ -39,12 +39,12 @@ ll fast_expo(ll a,ll b)
     return b&1 ? a*fast_expo(fast_expo(a,(b-1)/2),2) : fast_expo(fast_expo(a,b/2),2);
 }
 
-void spiralOrder(int matrix[4][4])
+void spiralOrder(int matrix[][],int m, int n)
 {
      int top = 0;
-     int down = 3;
+     int down = m-1;
      int left = 0;
-     int right = 3;
+     int right = n-1;
      while(top<=down && left<=right)
      {
          // Print top row
@@ -73,11 +73,13 @@ int main()
 	cin>>t;
 	while(t--)
 	{
-		int a[4][4];
-		REP(i,4)
-			REP(j,4)
+        int m,n;
+        cin>>m>>n;
+		int a[m][n];
+		REP(i,m)
+			REP(j,n)
 				cin>>a[i][j];
-		spiralOrder(a);
+		spiralOrder(a,m,n);
 	}
 	return 0;
 }
