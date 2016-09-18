@@ -45,24 +45,24 @@ void spiralOrder(int matrix[4][4])
      int down = 3;
      int left = 0;
      int right = 3;
-     while(1)
+     while(top<=down && left<=right)
      {
          // Print top row
-         REP2(j,left,right+1) cout<<matrix[top][j]<<" ";
+         REP2(i,left,right+1) cout<<matrix[top][i]<<" ";
          top++;
-         if(top > down || left > right) break;
+        
          //Print the rightmost column
          REP2(i,top,down+1) cout<<matrix[i][right]<<" ";
          right--;
-         if(top > down || left > right) break;
+         
          //Print the bottom row
-         NREP2(j,right,left) cout<<matrix[down][j]<<" ";
+         NREP2(i,right,left) cout<<matrix[down][i]<<" ";
          down--;
-         if(top > down || left > right) break;
+         
          //Print the leftmost column
          NREP2(i,down,top) cout<<matrix[i][left]<<" ";
          left++;
-         if(top > down || left > right) break;
+         
      }
      cout<<endl;
  }
